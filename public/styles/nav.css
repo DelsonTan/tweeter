@@ -8,7 +8,15 @@
     padding: 0 2em 0 2em;
 }
 
-.logo {
+#nav-bar .logo {
     height: 80px;
     width: 80px;
+    float:left;
+}
+
+#nav-bar .header {
+    font-size: 2rem;
+    margin-left: 10px;
+    float:left;
+    line-height: 80px;
 }
