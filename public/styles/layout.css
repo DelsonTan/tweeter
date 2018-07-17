@@ -27,6 +27,7 @@ main {
   margin: auto;
   padding: 3rem;
   text-align: center;
+  z-index: 1;
 }
 
 /*

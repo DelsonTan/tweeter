@@ -1,0 +1,55 @@
+main .tweets {
+    border: solid 1px lightgrey;
+    border-radius: 0.3rem;
+    overflow: auto;
+    margin-top: 1rem;
+    
+}
+
+main .tweets header {
+    background-color: #eee;
+    padding-top: 10px;
+    height: 68px;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+main .tweets h2 {
+    float: left;
+    padding-left: 4rem;
+    margin: 0;
+
+}
+
+main .tweets .avatar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    float: left;
+    padding: 0.5rem;
+    border-radius: 20%;
+
+}
+
+main .tweets .handle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+    padding-top: 0.5rem;
+    padding-right: 0.3rem;
+}
+
+main .tweets p {
+    text-align: left;
+    padding-left: 10px;
+}
+
+main .tweets footer {
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    text-align: left;
+    padding: 0.5rem;
+    font-size: x-small;
+}
