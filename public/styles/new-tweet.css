@@ -2,7 +2,8 @@ main .new-tweet {
     background-color: #eee;
     border: solid 1px lightgrey;
     border-radius: 0.3rem;
-    height: 8rem;
+    overflow: auto;
+    padding: 0 0.3rem;
 }
 
 main .new-tweet h2 {
@@ -13,7 +14,7 @@ main .new-tweet h2 {
 
 main .new-tweet textarea {
     padding: 0.2em;
-    width: 95%;
+    width: 100%;
 }
 
 main .new-tweet form input {
