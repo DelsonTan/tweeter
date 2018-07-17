@@ -25,4 +25,9 @@ main .new-tweet form input {
 main .new-tweet form .counter {
     margin-right: 0.5rem;
     float: right;
+    color: black;
+}
+
+main .new-tweet form .red-text {
+    color: darkred;
 }
