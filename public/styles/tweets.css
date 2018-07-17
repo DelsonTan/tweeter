@@ -1,18 +1,25 @@
 main .tweets {
-    border: solid 1px lightgrey;
+    border: solid 1px #eee;
     border-radius: 0.3rem;
     overflow: auto;
     margin-top: 1rem;
-    
+}
+
+main .tweets:hover {
+    border: solid 1px lightgrey;
 }
 
 main .tweets header {
-    background-color: #eee;
+    background-color: whitesmoke;
     padding-top: 10px;
     height: 68px;
     width: 100%;
     overflow: auto;
     position: relative;
+}
+
+main .tweets:hover header {
+    background-color: #eee;
 }
 
 main .tweets h2 {
@@ -48,8 +55,28 @@ main .tweets p {
 
 main .tweets footer {
     width: 100%;
-    border-top: 1px solid lightgrey;
-    text-align: left;
+    border-top: 1px solid #eee;
     padding: 0.5rem;
     font-size: x-small;
+    overflow: auto;
 }
+
+main .tweets footer span.timestamp {
+    float: left;
+    text-align: left;
+}
+
+main .tweets footer span.icons {
+    float: right;
+    text-align: right;
+    opacity: 0.1;
+}
+
+main .tweets:hover footer {
+    border-color: lightgrey;
+}
+
+main .tweets:hover footer span.icons {
+    opacity: 1;
+}
+
