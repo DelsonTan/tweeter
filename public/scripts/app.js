@@ -33,8 +33,15 @@ $(document).ready(function () {
   }
 
   function setupEventListeners() {
-    var button = document.querySelector("input[value=Tweet]");
-    button.addEventListener("click", function (event) {
+    var composeButton = document.querySelector("input[value=Compose]")
+    composeButton.addEventListener("click", function(event) {
+      event.preventDefault();
+
+    })
+
+
+    var tweetButton = document.querySelector("input[value=Tweet]");
+    tweetButton.addEventListener("click", function (event) {
       event.preventDefault();
       if ($(".new-tweet textarea").val().length = 0) {
         alert("There is nothing to tweet!")

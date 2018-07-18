@@ -6,6 +6,7 @@
     background-color: #00a087;
     color: #e8fdff;
     padding: 0 2em 0 2em;
+    z-index: 1;
 }
 
 #nav-bar .logo {
@@ -19,4 +20,19 @@
     margin-left: 10px;
     float:left;
     line-height: 80px;
+}
+
+#nav-bar form input {
+    float: right;
+    text-align: center;
+    padding: 0.8rem;
+    margin: 16px 0;
+    color: #00a087;
+    border-radius: 5px;
+    border: black solid 1px;
+}
+
+#nav-bar form input:hover {
+    background-color: whitesmoke; 
+    color: black;
 }
