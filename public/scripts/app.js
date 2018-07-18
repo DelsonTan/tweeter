@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
   var data = [
     {
@@ -45,7 +47,7 @@ $(document).ready(function () {
       "created_at": 1461113796368
     }
   ];
-  
+
   function createTweetElement(obj) {
     var $article = $("<article>");
     $article.addClass("tweet");
@@ -79,4 +81,21 @@ $(document).ready(function () {
   }
 
   renderTweets(data);
+
+  function setupEventListeners() {
+    var button = document.querySelector('input[value=Tweet]');
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $('form').serialize()
+      })
+        .done(function() {
+          console.log("request sent");
+        });
+    })
+  }
+
+  setupEventListeners();
 })
