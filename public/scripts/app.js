@@ -45,50 +45,27 @@ $(document).ready(function () {
       "created_at": 1461113796368
     }
   ];
-
+  
   function createTweetElement(obj) {
     var $article = $("<article>");
     $article.addClass("tweet");
 
     var $header = $("<header>");
-
-    var $h2 = $("<h2>");
-    $h2.text(obj.user.name);
-    $header.append($h2);
-
-    var $avatar = $("<img>");
-    $avatar.addClass("avatar");
-    $avatar.attr("src", obj.user.avatars.small);
-    $header.append($avatar);
-
-    var $handle = $("<span>");
-    $handle.addClass("handle");
-    $handle.text(obj.user.handle);
-    $header.append($handle);
-
+    $("<h2>").text(obj.user.name).appendTo($header);
+    $("<img>").addClass("avatar").attr("src", obj.user.avatars.small).appendTo($header);
+    $("<span>").addClass("handle").text(obj.user.handle).appendTo($header);
     $article.append($header);
 
-    var $content = $("<p>");
-    $content.text(obj.content.text);
-
+    var $content = $("<p>").text(obj.content.text);
     $article.append($content);
 
     var $footer = $("<footer>");
-
-    var $timestamp = $("<span>").addClass("timestamp");
-    $timestamp.text(moment(obj.created_at).fromNow());
-    $footer.append($timestamp);
-
-    var $icons = $("<span>").addClass("icons");
-    var $flag = $("<i>").addClass("fas fa-flag");
-    $icons.append($flag);
-    var $retweet = $("<i>").addClass("fas fa-retweet");
-    $icons.append($retweet);
-    var $heart = $("<i>").addClass("fas fa-heart");
-    $icons.append($heart);
-
-    $footer.append($icons);
-
+    $("<span>").addClass("timestamp").text(moment(obj.created_at).fromNow()).appendTo($footer);
+    $("<span>").addClass("icons");
+    $("<i>").addClass("fas fa-flag").appendTo(".icons");
+    $("<i>").addClass("fas fa-retweet").appendTo(".icons");
+    $("<i>").addClass("fas fa-heart").appendTo(".icons");
+    $(".icons").appendTo($footer);
     $article.append($footer);
 
     return $article;
@@ -103,17 +80,3 @@ $(document).ready(function () {
 
   renderTweets(data);
 })
-// <article class="tweets">
-//   <header>
-//     <h2>Bill Fields</h2>
-//     <img class="avatar" src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png">
-//     <span class="handle">@MrFields</span>
-//   </header>
-
-//   <p>Little tweet here</p>
-
-//   <footer>
-//     <span class="timestamp">10 days ago</span>
-//     <span class="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
-//   </footer>
-// </article>
