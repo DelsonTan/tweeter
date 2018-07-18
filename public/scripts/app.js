@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
   function createTweetElement(obj) {
@@ -36,7 +38,8 @@ $(document).ready(function () {
     var composeButton = document.querySelector("input[value=Compose]")
     composeButton.addEventListener("click", function(event) {
       event.preventDefault();
-
+      $(".new-tweet").slideToggle();
+      $(".new-tweet textarea").focus();
     })
 
 
@@ -56,7 +59,6 @@ $(document).ready(function () {
           .done(function () {
             $(".new-tweet textarea").val("");
             loadTweets();
-            console.log("request sent");
           });
       }
     })
