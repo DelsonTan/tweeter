@@ -18,12 +18,12 @@ html {
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: rgba(248, 248, 255, 0.836);
 }
 
 main {
   width: 450px;
-  background-color: white;
+  background-color: lightblue;
   margin: auto;
   padding: 3rem;
   text-align: center;

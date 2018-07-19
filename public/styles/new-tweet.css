@@ -1,5 +1,5 @@
 main .new-tweet {
-    background-color: #eee;
+    background-color: ghostwhite;
     border: solid 1px lightgrey;
     border-radius: 0.3rem;
     overflow: auto;
@@ -23,13 +23,13 @@ main .new-tweet form input {
     float: left;
     border: lightgrey 1px solid;
     border-radius: 5px;
-    background: #00a087;
+    background: #0d749c;
     color: white;
 
 }
 
 main .new-tweet form input:hover {
-    background: white;
+    background: ghostwhite;
     color: black; 
     border-color: black;
 

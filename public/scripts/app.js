@@ -42,7 +42,7 @@ $(document).ready(function () {
       $(".new-tweet textarea").focus();
     })
 
-    var tweetButton = document.querySelector("input[value=Tweet]");
+    var tweetButton = document.querySelector("input[value=Croak]");
     tweetButton.addEventListener("click", function (event) {
       event.preventDefault();
       $(".new-tweet .errors").text("").slideUp();

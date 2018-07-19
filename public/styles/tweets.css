@@ -1,5 +1,5 @@
 main .tweets {
-    border: solid 1px #eee;
+    border: solid 1px ghostwhite;
     border-radius: 0.3rem;
     overflow: auto;
     margin-top: 1rem;
@@ -11,7 +11,7 @@ main .tweets:hover {
 }
 
 main .tweets header {
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     padding-top: 10px;
     height: 68px;
     width: 100%;
@@ -51,7 +51,7 @@ main .tweets p {
 
 main .tweets footer {
     width: 100%;
-    border-top: 1px solid #eee;
+    border-top: 1px solid ghostwhite;
     padding: 0.5rem;
     font-size: x-small;
     overflow: auto;
