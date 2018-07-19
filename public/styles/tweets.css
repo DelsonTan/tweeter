@@ -1,12 +1,16 @@
 main .tweets {
+    overflow: auto;
+    margin-top: 1rem;  
+}
+
+main .tweets article {
     border: solid 1px ghostwhite;
     border-radius: 0.3rem;
-    overflow: auto;
-    margin-top: 1rem;
+    margin-bottom: 30px;
     opacity: 0.7;
 }
 
-main .tweets:hover {
+main .tweets article:hover {
     opacity: 1;
 }
 
@@ -51,6 +55,7 @@ main .tweets p {
 
 main .tweets footer {
     width: 100%;
+    background-color: ghostwhite;
     border-top: 1px solid ghostwhite;
     padding: 0.5rem;
     font-size: x-small;
