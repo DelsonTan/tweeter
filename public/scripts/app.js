@@ -35,21 +35,21 @@ $(document).ready(function () {
   }
 
   function setupEventListeners() {
-    var composeButton = document.querySelector("input[value=Compose]")
+    var composeButton = document.querySelector("#compose-button")
     composeButton.addEventListener("click", function(event) {
       event.preventDefault();
       $(".new-tweet").slideToggle();
       $(".new-tweet textarea").focus();
     })
 
-
     var tweetButton = document.querySelector("input[value=Tweet]");
     tweetButton.addEventListener("click", function (event) {
       event.preventDefault();
-      if ($(".new-tweet textarea").val().length = 0) {
-        alert("There is nothing to tweet!")
+      $(".new-tweet .errors").text("").slideUp();
+      if ($(".new-tweet textarea").val().length === 0) {
+        $(".new-tweet .errors").text("Error: there is nothing to tweet!").slideDown();
       } else if ($(".new-tweet textarea").val().length > 140) {
-        alert("Your tweet is too long!");
+        $(".new-tweet .errors").text("Error: your tweet is too long!").slideDown();
       } else {
         $.ajax({
           method: "POST",

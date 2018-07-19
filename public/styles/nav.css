@@ -22,17 +22,18 @@
     line-height: 80px;
 }
 
-#nav-bar form input {
+#compose-button {
     float: right;
     text-align: center;
     padding: 0.8rem;
     margin: 16px 0;
     color: #00a087;
     border-radius: 5px;
+    background-color: white;
     border: black solid 1px;
 }
 
-#nav-bar form input:hover {
+#compose-button:hover {
     background-color: whitesmoke; 
     color: black;
 }

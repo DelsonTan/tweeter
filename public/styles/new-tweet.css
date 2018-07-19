@@ -21,12 +21,34 @@ main .new-tweet textarea {
 main .new-tweet form input {
     margin-left: 0.5rem;
     float: left;
+    border: lightgrey 1px solid;
+    border-radius: 5px;
+    background: #00a087;
+    color: white;
+
+}
+
+main .new-tweet form input:hover {
+    background: white;
+    color: black; 
+    border-color: black;
+
 }
 
 main .new-tweet form .counter {
     margin-right: 0.5rem;
     float: right;
     color: black;
+}
+
+main .new-tweet .errors {
+    color: white;
+    background-color: red;
+    border: white 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.8rem;
+    display: none;
 }
 
 main .new-tweet form .red-text {
