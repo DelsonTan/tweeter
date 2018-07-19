@@ -1,10 +1,7 @@
-
-
 $(document).ready(function () {
 
   function createTweetElement(obj) {
-    var $article = $("<article>");
-    $article.addClass("tweet");
+    var $article = $("<article>").addClass("tweet");
 
     var $header = $("<header>");
     $("<h2>").text(obj.user.name).appendTo($header);
@@ -12,8 +9,7 @@ $(document).ready(function () {
     $("<span>").addClass("handle").text(obj.user.handle).appendTo($header);
     $article.append($header);
 
-    var $content = $("<p>").text(obj.content.text);
-    $article.append($content);
+    var $content = $("<p>").text(obj.content.text).appendTo($article);
 
     var $footer = $("<footer>");
     $("<span>").addClass("timestamp").text(moment(obj.created_at).fromNow()).appendTo($footer);
@@ -56,10 +52,10 @@ $(document).ready(function () {
           url: "/tweets",
           data: $("form").serialize()
         })
-          .done(function () {
-            $(".new-tweet textarea").val("");
-            loadTweets();
-          });
+        .done(function () {
+          $(".new-tweet textarea").val("");
+          loadTweets();
+        });
       }
     })
   }

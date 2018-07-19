@@ -1,17 +1,17 @@
 #nav-bar {
     position: sticky;
     top: 0px;
-    height: 5em;
+    height: 5rem;
     width: 100%;
     background-color: #0d749c;
     color: #e8fdff;
-    padding: 0 2em 0 2em;
+    padding: 0 2rem 0 2rem;
     z-index: 1;
 }
 
 #nav-bar .logo {
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
     float:left;
 }
 
@@ -26,9 +26,9 @@
     float: right;
     text-align: center;
     padding: 0.8rem;
-    margin: 1em 0;
+    margin: 1rem 0;
     color: #0d749c;
-    border-radius: 1em;
+    border-radius: 1rem;
     background-color: whitesmoke;
     border: black solid 1px;
 }

@@ -6,7 +6,7 @@ main .tweets {
 main .tweets article {
     border: solid 1px ghostwhite;
     border-radius: 0.3rem;
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
     opacity: 0.7;
 }
 
@@ -16,8 +16,8 @@ main .tweets article:hover {
 
 main .tweets header {
     background-color: ghostwhite;
-    padding-top: 10px;
-    height: 68px;
+    padding-top: 1rem;
+    height: 5rem;
     width: 100%;
     overflow: auto;
     position: relative;

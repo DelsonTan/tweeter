@@ -22,7 +22,7 @@ main .new-tweet form input {
     margin-left: 0.5rem;
     float: left;
     border: lightgrey 1px solid;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background: #0d749c;
     color: white;
 
@@ -45,12 +45,12 @@ main .new-tweet .errors {
     color: white;
     background-color: red;
     border: white 1px solid;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     padding: 5px;
     font-size: 0.8rem;
     display: none;
 }
 
 main .new-tweet form .red-text {
-    color: darkred;
+    color: red;
 }
