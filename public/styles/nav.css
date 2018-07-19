@@ -1,7 +1,7 @@
 #nav-bar {
     position: sticky;
     top: 0px;
-    height: 80px;
+    height: 5em;
     width: 100%;
     background-color: #0d749c;
     color: #e8fdff;
@@ -10,8 +10,8 @@
 }
 
 #nav-bar .logo {
-    height: 80px;
-    width: 80px;
+    height: 5em;
+    width: 5em;
     float:left;
 }
 
@@ -26,9 +26,9 @@
     float: right;
     text-align: center;
     padding: 0.8rem;
-    margin: 16px 0;
+    margin: 1em 0;
     color: #0d749c;
-    border-radius: 5px;
+    border-radius: 1em;
     background-color: whitesmoke;
     border: black solid 1px;
 }

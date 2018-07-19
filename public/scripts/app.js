@@ -17,11 +17,11 @@ $(document).ready(function () {
 
     var $footer = $("<footer>");
     $("<span>").addClass("timestamp").text(moment(obj.created_at).fromNow()).appendTo($footer);
-    $("<span>").addClass("icons");
-    $("<i>").addClass("fas fa-flag").appendTo(".icons");
-    $("<i>").addClass("fas fa-retweet").appendTo(".icons");
-    $("<i>").addClass("fas fa-heart").appendTo(".icons");
-    $(".icons").appendTo($footer);
+    var $icons = $("<span>").addClass("icons");
+    $("<i>").addClass("fas fa-flag").appendTo($icons);
+    $("<i>").addClass("fas fa-retweet").appendTo($icons);
+    $("<i>").addClass("fas fa-heart").appendTo($icons);
+    $footer.append($icons);
     $article.append($footer);
 
     return $article;
