@@ -27,17 +27,30 @@ module.exports = {
       userHandle += suffix;
     }
 
-    const avatarUrlPrefix = `https://vanillicon.com/${md5(userHandle)}`;
-    const avatars = {
-      small:   `${avatarUrlPrefix}_50.png`,
-      regular: `${avatarUrlPrefix}.png`,
-      large:   `${avatarUrlPrefix}_200.png`
-    }
-
     return {
       name: userName,
       handle: userHandle,
-      avatars: avatars
+      avatars: generateAvatars(userHandle)
     };
+  },
+
+  generateUser: (userName, userHandle, userEmail, userPassword) => {
+    return {
+      name: userName,
+      handle: userHandle,
+      email: userEmail,
+      password: userPassword,
+      avatars: generateAvatars(userHandle)
+    }
   }
 };
+
+function generateAvatars(handle) {
+  const avatarUrlPrefix = `https://vanillicon.com/${md5(handle)}`;
+  const avatars = {
+    small:   `${avatarUrlPrefix}_50.png`,
+    regular: `${avatarUrlPrefix}.png`,
+    large:   `${avatarUrlPrefix}_200.png`
+  }
+  return avatars;
+}
