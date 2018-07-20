@@ -43,11 +43,9 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.delete("/:id", function (req, res) {
     // query to be passed to Mongo's db.collection.remove() method
-    const idQuery = {
-      id: req.body.id
-    };
+    const tweetID = req.body.id;
 
-    DataHelpers.deleteTweet(idQuery, (err) => {
+    DataHelpers.deleteTweet(tweetID, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

@@ -10,8 +10,9 @@ module.exports = function makeDataHelpers(db) {
     },
 
     // Deletes a tweet
-    deleteTweet: function (targetTweet, callback) {
-      console.log(targetTweet);
+    deleteTweet: function (tweetID, callback) {
+      const ObjectId = require("mongodb").ObjectID;
+      db.collection("tweets").remove({"_id": ObjectId(tweetID)}, callback);
     },
 
     // Get all tweets in `db`, sorted by newest first
