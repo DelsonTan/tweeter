@@ -57,17 +57,16 @@ $(document).ready(function () {
   }
 
   function setupDeleteListener() {
-    console.log($(this).closest(".tweet"));
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/tweets/delete",
-    //   data: {
-
-    //   }//$(this).closest(".tweet").serialize()
-    // })
-    // .done(function () {
-    //   loadTweets();
-    // })
+    $.ajax({
+      method: "DELETE",
+      url: `/tweets/${$('id')}`,
+      data: {
+        id: $(this).closest(".tweet").attr('id')
+      }
+    })
+    .done(function () {
+      loadTweets();
+    })
   }
 
   function setupEventListeners() {
