@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   function createTweetElement(obj) {
-    var $article = $("<article>").addClass("tweet");
+    var $article = $("<article>").addClass("tweet").attr("id", obj._id);
 
     var $header = $("<header>");
     $("<h2>").text(obj.user.name).appendTo($header);
@@ -32,7 +32,6 @@ $(document).ready(function () {
   }
 
   function setUpComposeListener() {
-    //event.preventDefault();
     $(".new-tweet").slideToggle();
     $(".new-tweet textarea").focus();
   }
@@ -58,11 +57,16 @@ $(document).ready(function () {
   }
 
   function setupDeleteListener() {
-    var deleteButton = $(".delete");
-    console.log(deleteButton);
-    // deleteButton.addEventListener("click", function (event) {
-    //   //event.preventDefault();
-    //   console.log("Clicked:", $(this));
+    console.log($(this).closest(".tweet"));
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/tweets/delete",
+    //   data: {
+
+    //   }//$(this).closest(".tweet").serialize()
+    // })
+    // .done(function () {
+    //   loadTweets();
     // })
   }
 
@@ -73,9 +77,9 @@ $(document).ready(function () {
     var tweetButton = $("input[value=Croak]");
     tweetButton.on("click", setUpTweetListener)
 
-    $(".tweets").on("click", ".delete", function () {
-      console.log($(this).closest(".tweet"));
-    })
+    // Delete button listener is setup on the tweets container
+    // to listen for clicks on any delete button
+    $(".tweets").on("click", ".delete", setupDeleteListener)
   }
 
   setupEventListeners();
