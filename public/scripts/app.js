@@ -14,6 +14,7 @@ $(document).ready(function () {
     var $footer = $("<footer>");
     $("<span>").addClass("timestamp").text(moment(obj.created_at).fromNow()).appendTo($footer);
     var $icons = $("<span>").addClass("icons");
+    $("<i>").addClass("fas fa-trash-alt").attr('id', 'delete').appendTo($icons);
     $("<i>").addClass("fas fa-flag").appendTo($icons);
     $("<i>").addClass("fas fa-retweet").appendTo($icons);
     $("<i>").addClass("fas fa-heart").appendTo($icons);
