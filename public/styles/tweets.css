@@ -72,7 +72,7 @@ main .tweets footer span.icons {
     text-align: right;
 }
 
-main #delete:hover {
+main .delete:hover {
     color: darkred;
 }
 
