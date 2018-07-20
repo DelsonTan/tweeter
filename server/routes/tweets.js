@@ -41,6 +41,19 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  tweetsRoutes.delete("/:id", function (req, res) {
+    // query to be passed to Mongo's db.collection.remove() method
+    const tweetID = req.body.id;
+
+    DataHelpers.deleteTweet(tweetID, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    }); 
+  });
+
   return tweetsRoutes;
 
 }

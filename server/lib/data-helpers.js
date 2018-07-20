@@ -5,8 +5,14 @@ module.exports = function makeDataHelpers(db) {
   return {
 
     // Saves a tweet to `db`
-    saveTweet: function(newTweet, callback) {
-        db.collection("tweets").insertOne(newTweet, callback);
+    saveTweet: function (newTweet, callback) {
+      db.collection("tweets").insertOne(newTweet, callback);
+    },
+
+    // Deletes a tweet
+    deleteTweet: function (tweetID, callback) {
+      const ObjectId = require("mongodb").ObjectID;
+      db.collection("tweets").remove({"_id": ObjectId(tweetID)}, callback);
     },
 
     // Get all tweets in `db`, sorted by newest first

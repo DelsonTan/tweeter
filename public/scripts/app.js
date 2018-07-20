@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   function createTweetElement(obj) {
-    var $article = $("<article>").addClass("tweet");
+    var $article = $("<article>").addClass("tweet").attr("id", obj._id);
 
     var $header = $("<header>");
     $("<h2>").text(obj.user.name).appendTo($header);
@@ -14,6 +14,7 @@ $(document).ready(function () {
     var $footer = $("<footer>");
     $("<span>").addClass("timestamp").text(moment(obj.created_at).fromNow()).appendTo($footer);
     var $icons = $("<span>").addClass("icons");
+    $("<i>").addClass("fas fa-trash-alt").addClass("delete").appendTo($icons);
     $("<i>").addClass("fas fa-flag").appendTo($icons);
     $("<i>").addClass("fas fa-retweet").appendTo($icons);
     $("<i>").addClass("fas fa-heart").appendTo($icons);
@@ -30,34 +31,54 @@ $(document).ready(function () {
     }
   }
 
-  function setupEventListeners() {
-    var composeButton = document.querySelector("#compose-button")
-    composeButton.addEventListener("click", function(event) {
-      event.preventDefault();
-      $(".new-tweet").slideToggle();
-      $(".new-tweet textarea").focus();
-    })
+  function setUpComposeListener() {
+    $(".new-tweet").slideToggle();
+    $(".new-tweet textarea").focus();
+  }
 
-    var tweetButton = document.querySelector("input[value=Croak]");
-    tweetButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      $(".new-tweet .errors").text("").slideUp();
-      if ($(".new-tweet textarea").val().length === 0) {
-        $(".new-tweet .errors").text("Error: there is nothing to tweet!").slideDown();
-      } else if ($(".new-tweet textarea").val().length > 140) {
-        $(".new-tweet .errors").text("Error: your tweet is too long!").slideDown();
-      } else {
-        $.ajax({
-          method: "POST",
-          url: "/tweets",
-          data: $("form").serialize()
-        })
+  function setUpTweetListener() {
+    event.preventDefault();
+    $(".new-tweet .errors").text("").slideUp();
+    if ($(".new-tweet textarea").val().length === 0) {
+      $(".new-tweet .errors").text("Error: there is nothing to tweet!").slideDown();
+    } else if ($(".new-tweet textarea").val().length > 140) {
+      $(".new-tweet .errors").text("Error: your tweet is too long!").slideDown();
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $("form").serialize()
+      })
         .done(function () {
           $(".new-tweet textarea").val("");
           loadTweets();
         });
+    }
+  }
+
+  function setupDeleteListener() {
+    $.ajax({
+      method: "DELETE",
+      url: `/tweets/${$('id')}`,
+      data: {
+        id: $(this).closest(".tweet").attr('id')
       }
     })
+    .done(function () {
+      loadTweets();
+    })
+  }
+
+  function setupEventListeners() {
+    var composeButton = $("#compose-button")
+    composeButton.on("click", setUpComposeListener)
+
+    var tweetButton = $("input[value=Croak]");
+    tweetButton.on("click", setUpTweetListener)
+
+    // Delete button listener is setup on the tweets container
+    // to listen for clicks on any delete button
+    $(".tweets").on("click", ".delete", setupDeleteListener)
   }
 
   setupEventListeners();
