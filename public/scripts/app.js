@@ -31,6 +31,28 @@ $(document).ready(function () {
     }
   }
 
+  function setUpLoginListener() {
+    event.preventDefault();
+    let emailField = $("#login textarea[name=email]");
+    let passwordField = $("#login textarea[name=password]");
+    if (emailField.val().length === 0 || passwordField.val().length === 0) {
+      console.log("Login fields are empty");
+    } else {
+      console.log("Login attempt successful but no AJAX request yet");
+      $.ajax({
+        method: "POST",
+        url: "/users/login",
+        data: {
+          email: emailField.val(),
+          password: passwordField.val()
+        }
+      })
+      .done(function () {
+        console.log("AJAX request sent.");
+        });
+    }
+  }
+
   function setUpComposeListener() {
     $(".new-tweet").slideToggle();
     $(".new-tweet textarea").focus();
@@ -47,7 +69,7 @@ $(document).ready(function () {
       $.ajax({
         method: "POST",
         url: "/tweets",
-        data: $("form").serialize()
+        data: $("form").serialize() 
       })
         .done(function () {
           $(".new-tweet textarea").val("");
@@ -72,12 +94,14 @@ $(document).ready(function () {
   }
 
   function setupEventListeners() {
-    var composeButton = $("#compose-button")
-    composeButton.on("click", setUpComposeListener)
+    var composeButton = $("#compose-button");
+    composeButton.on("click", setUpComposeListener);
 
     var tweetButton = $("input[value=Croak]");
-    tweetButton.on("click", setUpTweetListener)
+    tweetButton.on("click", setUpTweetListener);
 
+    var loginButton = $("#login-button");
+    loginButton.on("click", setUpLoginListener);
     // Delete button listener is setup on the tweets container
     // to listen for clicks on any delete button
     $(".tweets").on("click", ".delete", setupDeleteListener)

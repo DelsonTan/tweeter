@@ -17,5 +17,9 @@ module.exports = function (DataHelpers) {
         });
     });
 
+    usersRoutes.post("/login", function (req, res) {
+        console.log(req.body);
+    });
+
     return usersRoutes;
 };
