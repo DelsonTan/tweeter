@@ -51,6 +51,7 @@ $(document).ready(function () {
       })
         .done(function () {
           $(".new-tweet textarea").val("");
+          $(".tweets").empty();
           loadTweets();
         });
     }
@@ -65,6 +66,7 @@ $(document).ready(function () {
       }
     })
     .done(function () {
+      $(".tweets").empty();
       loadTweets();
     })
   }

@@ -22,7 +22,7 @@ module.exports = function makeDataHelpers(db) {
     },
 
     getUsers: function (callback) {
-      db.collection("tweets").find().toArray(callback);
+      db.collection("users").find().toArray(callback);
     }
   };
 }

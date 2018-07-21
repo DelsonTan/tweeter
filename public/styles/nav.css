@@ -1,5 +1,5 @@
 #nav-bar {
-    position: sticky;
+    position: fixed;
     top: 0px;
     height: 5rem;
     width: 100%;
@@ -31,6 +31,45 @@
     border-radius: 1rem;
     background-color: whitesmoke;
     border: black solid 1px;
+}
+
+#login {
+    width: 1em;
+    color: black;
+}
+
+#login-button {
+    float:left;
+    text-align: center;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    color: #0d749c;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    border: black solid 1px;
+}
+
+#register-button {
+    float:left;
+    text-align: center;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    color: #0d749c;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    border: black solid 1px;
+}
+
+#logout-button {
+    float:left;
+    text-align: center;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    color: #0d749c;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    border: black solid 1px;
+    display: none;
 }
 
 #compose-button:hover {

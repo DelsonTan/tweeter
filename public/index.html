@@ -12,8 +12,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700,700i" rel="stylesheet">
 
   <!-- Font Awesome Icons from Font Awesome-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/solid.css" integrity="sha384-S2gVFTIn1tJ/Plf+40+RRAxBCiBU5oAMFUJxTXT3vOlxtXm7MGjVj62mDpbujs4C" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/fontawesome.css" integrity="sha384-0b7ERybvrT5RZyD80ojw6KNKz6nIAlgOKXIcJ0CV7A6Iia8yt2y1bBfLBOwoc9fQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/solid.css" integrity="sha384-S2gVFTIn1tJ/Plf+40+RRAxBCiBU5oAMFUJxTXT3vOlxtXm7MGjVj62mDpbujs4C"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/fontawesome.css" integrity="sha384-0b7ERybvrT5RZyD80ojw6KNKz6nIAlgOKXIcJ0CV7A6Iia8yt2y1bBfLBOwoc9fQ"
+    crossorigin="anonymous">
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -47,6 +49,17 @@
     <img class="logo" src="/images/frog.png">
     <span class="header">Croaker</span>
     <span id="compose-button">Compose</span>
+    
+    <section id="login">
+      <h2>Login</h2>
+      <form method="POST" action="/users/login">
+        <textarea name="email" placeholder="E-mail Address"></textarea>
+        <textarea name="password" placeholder="Password"></textarea>
+        <input id="login-button" type="submit" value="Login">
+      </form>
+    </section>
+    <section id="register-button">Register</section>
+    <section id="logout-button">Logout</section>
   </nav>
 
   <!-- Page-specific (main) content here -->
